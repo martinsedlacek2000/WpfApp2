@@ -11,12 +11,12 @@ using System.IO;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using VF.Practices.DataAccess;
 
-namespace VF.DAL
+namespace VF.DAL.DARS
 {
 
 	#region Schema
 
-	public class TKBODSchema : Schema
+	public class TKBODSchema : VF.Practices.DataAccess.Schema
 	{
 		private static ArrayList _entries;
 		public static SchemaItem FTKBIDENT = new SchemaItem("FTKBIDENT", System.Data.DbType.Decimal, true, false, false, true, false, false);
@@ -86,7 +86,6 @@ namespace VF.DAL
 		public _TKBOD()
 		{
 			TKBODSchema _schema = new TKBODSchema();
-
 			this.SchemaEntries = _schema.SchemaEntries;
 			this.SchemaGlobal = "";
 		}
